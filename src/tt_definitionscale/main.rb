@@ -46,7 +46,7 @@ module TT::Plugins::DefinitionScale
     menu.add_item(cmd_scale_up_10)
     menu.add_item(cmd_scale_down_10)
 
-    menu_position = 16
+    menu_position = 20 # TODO: Set based on SketchUp 2021, Windows
 
     UI.add_context_menu_handler do |context_menu|
       model = Sketchup.active_model
