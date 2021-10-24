@@ -1,0 +1,34 @@
+require: rubocop-sketchup
+
+inherit_from:
+  - https://raw.githubusercontent.com/SketchUp/rubocop-sketchup/5bb95f8781bd19ea7592f3c6b9c50ee18bba71a8/sketchup-style.yml
+  # - .rubocop_todo.yml
+
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  Exclude:
+  - src/*/vendor/**/*
+  NewCops: enable
+  SketchUp:
+    SourcePath: src
+    TargetSketchUpVersion: 2014
+    Exclude:
+    - profiling/**/*
+    - skippy/**/*
+    - tests/**/*
+  TargetRubyVersion: 2.5 # Should have been 2.0 but RuboCop dropped support.
+
+# In debug code the encoding bug in Ruby isn't a big issue.
+SketchupSuggestions/FileEncoding:
+  Exclude:
+  - src/tt_definitionscale/debug.rb
+
+
+# Root extension file got an unusual indentation. That's fine.
+# This is very particular to my TT::Plugin::Extension name scheme.
+# Whoever might read this; the ::Plugin:: part is legacy naming I now regret.
+Layout/IndentationWidth:
+  Exclude:
+    - 'src/*.rb'

@@ -1,0 +1,19 @@
+{
+  "name": "Definition Scale",
+  "description": "",
+  "namespace": "TT::Plugins::DefinitionScale",
+  "basename": "tt_definitionscale",
+  "author": "Thomas Thomassen",
+  "copyright": "Copyright (c) 2021",
+  "license": "None",
+  "sources": [
+    "github.com",
+    "bitbucket.org"
+  ],
+  "libraries": [
+
+  ],
+  "modules": [
+
+  ]
+}
