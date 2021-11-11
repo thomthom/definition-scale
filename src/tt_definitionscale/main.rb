@@ -23,9 +23,12 @@ module TT::Plugins::DefinitionScale
 
     model.start_operation(operation_name, true)
     definitions.each { |definition|
+
       definition.entities.transform_entities(definition_transformation, definition.entities.to_a)
+
       definition.instances.each { |instance|
-        instance.transform!(instance_transformation)
+        tr_i = instance.transformation
+        instance.transform!(tr_i * instance_transformation * tr_i.inverse)
       }
     }
     model.commit_operation
